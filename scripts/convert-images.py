@@ -6,6 +6,7 @@ from PIL import Image
 from glob import glob
 import re
 from os import path
+import pathlib
 
 def has_bad_extrema(img):
     #b&w images are either flat (an error) or suspicious if they don't use the full pixel depth
@@ -72,12 +73,15 @@ def add_mask(filename, myImage):
     return myImage
 
 
-in_dir = './'
-out_dir = './test/'
+in_dir = '../images/'
+out_dir = '../processed/'
 pattern = 'ic*dp'
 size = (128, 128)
 
-file_list = [path.basename(x) for x in glob(in_dir + pattern)]
+#make output dir if does not exist
+pathlib.Path(out_dir).mkdir(parents=True, exist_ok=True)
+
+file_list = [path.abspath(x) for x in glob(in_dir + pattern)]
 for file in file_list:
     im = Image.open(file)
     out_im = im.resize(size).rotate(270)
@@ -87,4 +91,4 @@ for file in file_list:
         out_im = scale_pixels(out_im, dmin, dmax)
     elif is_transparent(im):
         out_im = add_mask(file, out_im.convert('RGBA'))
-    out_im = out_im.convert('L').save(out_dir + file, 'jpeg')
+    out_im = out_im.convert('L').save(out_dir + path.basename(file), 'jpeg')
