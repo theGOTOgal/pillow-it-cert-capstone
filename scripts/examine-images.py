@@ -28,13 +28,13 @@ def has_bad_extrema(img):
         return True
     return False
 
-dir = './'
+dir = '../images/'
 pattern = 'ic*dp'
-image_list = [path.basename(x) for x in glob(dir + pattern)]
+image_list = [path.abspath(x) for x in glob(dir + pattern)]
 
 for file in image_list:
     img = Image.open(file)
     if has_bad_extrema(img):
-        print(f'Image may have problematic contrast levels: {file}')
+        print(f'Image may have problematic contrast levels: {path.basename(file)}')
         print(f'Image mode: {img.mode}')
         print(f'Image extrema: {img.getextrema()}')
