@@ -40,4 +40,4 @@ This project was a nice introduction to using pillow.  It was definitely a learn
 
 ## Thanks for reading
 
-As mentioned, this is a small project that was part of some fun automation practice for a class I took.  I may refer to it if I use pillow for future projects, but it's not intended for further development.
+As mentioned, this is a small project that was part of some fun automation practice for a class I took.  I may refer to it if I use pillow for future projects, but it's not intended for further development at this time.
