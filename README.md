@@ -38,6 +38,10 @@ Stepping through the notebook will run experiments on test images.  It will try 
 
 This project was a nice introduction to using pillow.  It was definitely a learning process but I'm happy to have successfully completed the project with no lingering issues to resolve.  I understand a lot more about image files, transparency, and composites now.
 
+Future fixes may not happen, but could be:
+- Paste more images into examine_images notebook so I can comment out more of the saves/shows.
+- Consider truncating some of the notebook data print outs.  My view automatically does fine though, and some of the data is useful to have complete.
+
 ## Thanks for reading
 
 As mentioned, this is a small project that was part of some fun automation practice for a class I took.  I may refer to it if I use pillow for future projects, but it's not intended for further development at this time.
